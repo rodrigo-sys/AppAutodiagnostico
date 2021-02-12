@@ -11,7 +11,7 @@
           Core Docs
         </a>
       </li>
-      <li>
+      <li> 
         <a
           href="https://forum.vuejs.org"
           target="_blank"

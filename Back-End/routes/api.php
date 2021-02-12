@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PersonaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('name', 'PersonaController@nombre');
+Route::get('todo', 'PersonaController@index');
+
+Route::get('probame', 'PersonaController@anda');
+Route::get('apellido', 'PersonaController@apellido');
+Route::get('sintomas', 'PersonaController@sintomas');
+Route::get('datos', 'PersonaController@datos');

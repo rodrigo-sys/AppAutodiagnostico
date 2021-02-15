@@ -6,12 +6,15 @@
     <form>
       <input type="text" id="login" class="fadeIn second" name="login" placeholder="Correo Electronico">
       <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
-      <router-link to="/about"><input type="submit" class="fadeIn fourth" value="Log In"></router-link>
+      <input type="submit" class="fadeIn fourth" value="Log In" v-on:click="signUp">
     </form>
 
     <!-- Remind Passowrd -->
     <div id="formFooter">
       <a class="underlineHover" href="#">Forgot Password?</a>
+      <div id="components-demo">
+  <button-counter></button-counter>
+</div>
     </div>
 
   </div>
@@ -26,6 +29,11 @@ export default {
   name: 'home',
   components: {
     Helloworld
+  },
+  methods: {
+    signUp: function () {
+    //  Codigo para logearse
+    }
   }
 }
 </script>

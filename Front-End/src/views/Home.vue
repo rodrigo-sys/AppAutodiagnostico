@@ -1,34 +1,46 @@
 <template>
-  <div class="HelloWorld">
-<div class="wrapper fadeInDown">
-  <div id="formContent">
-    <!-- Login Form -->
+    <div class="Home">
+    <div class="wrapper fadeInDown">
+<div id="formContent">
+    <br><br><br>
     <form>
       <input type="text" id="login" class="fadeIn second" name="login" placeholder="Correo Electronico">
-      <input type="password" id="password" class="fadeIn third" name="login" placeholder="Contraseña">
-      <input type="submit" class="fadeIn fourth" value="Login">
+      <input type="text" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
+      <input type="submit" class="fadeIn fourth" value="Log In" v-on:click="signUp">
     </form>
 
     <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+      <div id="components-demo">
+  <button-counter></button-counter>
+</div>
+    </div>
+
   </div>
 </div>
-  </div>
+    </div>
 </template>
 
 <script>
+import Helloworld from '@/components/Helloworld.vue'
 
 export default {
-  name: 'HelloWorld',
+  name: 'home',
   components: {
-
+    Helloworld
+  },
+  methods: {
+    signUp: function () {
+    //  Codigo para logearse
+    }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 html {
-  background-color: #56baed;
+  background-color: #222;
 }
 
 body {
@@ -37,7 +49,7 @@ body {
 }
 
 a {
-  color: #92badd;
+  color: #222;
   display:inline-block;
   text-decoration: none;
   font-weight: 400;
@@ -96,13 +108,13 @@ h2.inactive {
 
 h2.active {
   color: #0d0d0d;
-  border-bottom: 2px solid #5fbae9;
+  border-bottom: 2px solid #222;
 }
 
 /* FORM TYPOGRAPHY*/
 
 input[type=button], input[type=submit], input[type=reset]  {
-  background-color: #56baed;
+  background-color: #222;
   border: none;
   color: white;
   padding: 15px 80px;
@@ -124,7 +136,7 @@ input[type=button], input[type=submit], input[type=reset]  {
 }
 
 input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
-  background-color: #39ace7;
+  background-color: #222;
 }
 
 input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
@@ -158,7 +170,7 @@ input[type=text] {
 
 input[type=text]:focus {
   background-color: #fff;
-  border-bottom: 2px solid #5fbae9;
+  border-bottom: 2px solid #222;
 }
 
 input[type=text]:placeholder {
@@ -175,32 +187,6 @@ input[type=text]:placeholder {
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
-}
-
-@-webkit-keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
-}
-
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: none;
-    transform: none;
-  }
 }
 
 /* Simple CSS3 Fade-in Animation */
@@ -254,13 +240,13 @@ input[type=text]:placeholder {
   bottom: -10px;
   width: 0;
   height: 2px;
-  background-color: #56baed;
+  background-color: #222;
   content: "";
   transition: width 0.2s;
 }
 
 .underlineHover:hover {
-  color: #0d0d0d;
+  color: #222;
 }
 
 .underlineHover:hover:after{

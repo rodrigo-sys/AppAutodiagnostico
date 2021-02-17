@@ -25,7 +25,7 @@ class PersonaController extends Controller
     }
     function sintomas(){
 
-        //Selecciona lo que hay en sintomas y lo obtiene, despues se muestra con el return
+        //Selecciona lo que hay en sintormas y lo obtiene, despues se muestra con el return
         $sintomasP = DB::table('personas')->select('sintomas')->get();
         return $sintomasP;
 
@@ -34,8 +34,13 @@ class PersonaController extends Controller
 
         $datoN = DB::table('personas')->select('nombre')->get();
         $datoA = DB::table('personas')->select('apellido')->get();
-        echo "$datoN";
-        echo "$datoA";
+        return [$datoN, $datoA];
+
+    }
+    function mostrarDatosPersonas(Request $request, $id){
+        //No usar comillas para llamar las variables en la query
+        $request = DB::table('personas')->where('id', '=', $id)->get();
+        return $request;
     }
     
 

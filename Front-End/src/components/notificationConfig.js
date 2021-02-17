@@ -19,13 +19,8 @@ function calcularIntervalo(intervalo, unidad){
 
 }
 
-function notificar(titulo, texto, intervalo, unidad){
+function notificar(titulo, opciones, intervalo, unidad){
     intervalo = calcularIntervalo(intervalo, unidad);
-    setInterval(function(){ mostrarNotificacion(titulo, texto); }, intervalo);
-    /*mostrarNotificacion.onclick = function(event){
-        event.preventDefault();
-        window.open('https://www.google.com');
-    }*/
-
+    setInterval(function(){ mostrarNotificacion(titulo, opciones); }, intervalo);
 }
 

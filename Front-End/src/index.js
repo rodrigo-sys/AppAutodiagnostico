@@ -8,8 +8,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Home',
-      component: () => import(/* webpackChunkName: "home" */ './views/Home.vue')
+      name: 'Login',
+      component: () => import(/* webpackChunkName: "login" */ './views/Login.vue')
     },
     {
       path: '/about',
@@ -33,14 +33,33 @@ export default new Router({
     {
       path: '/diagnostico',
       name: 'Diagnostico',
-      component: () => import(/* webpackChunkName: "home" */ './views/Diagnostico.vue')
+      component: () => import(/* webpackChunkName: "login" */ './views/Diagnostico.vue')
     },
     {
 
       path: '/about',
       name: 'about',
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    }
+    },
 
+    {
+      path: '/home',
+      name: 'Home',
+      component: () => import(/* webpackChunkName: "home" */ './views/Home.vue')
+    },
+    {
+
+      path: '/about',
+      name: 'about',
+      component: () => import(/* webpackChunkName: "about" */ './views/About.vue') }, {
+      path: '/password',
+      name: 'Password',
+      component: () => import(/* webpackChunkName: "password" */ './views/Password.vue')
+    },
+    {
+
+      path: '/about',
+      name: 'about',
+      component: () => import(/* webpackChunkName: "about" */ './views/About.vue') }
   ]
 })

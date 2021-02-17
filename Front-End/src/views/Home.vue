@@ -1,27 +1,7 @@
 <template>
     <div class="Home">
     <div class="wrapper fadeInDown">
-<div id="formContent">
-    <br><br><br>
-    <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Correo Electronico">
-      <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
-      <input type="submit" class="fadeIn fourth" value="Log In" v-on:click="signUp">
-
-      <router-link to="/register">
-  <input type="submit" class="fadeIn fourth" value="Register">
-</router-link>
-    </form>
-
-    <!-- Remind Passowrd -->
-    <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a>
-      <div id="components-demo">
-  <button-counter></button-counter>
-</div>
-    </div>
-
-  </div>
+ <img src="../assets/ine.png" width="450">
 </div>
     </div>
 </template>

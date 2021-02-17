@@ -23,12 +23,12 @@
 </template>
 
 <script>
-import Helloworld from '@/components/Helloworld.vue'
+//import Helloworld from '@/components/Helloworld.vue'
 
 export default {
   name: 'home',
   components: {
-    Helloworld
+   // Helloworld
   },
   methods: {
     signUp: function () {

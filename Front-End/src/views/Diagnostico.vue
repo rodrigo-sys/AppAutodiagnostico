@@ -4,26 +4,29 @@
 <div id="formContent">
     <br><br><br>
     <form>
-     ¿Percibiste una marcada pérdida del olfato de manera repentina?<br>
-    <input type="radio" id="olfato" name="answer" value="Si"> Si <input type="radio" id="olfato2" name="answer" value="No"> No <br>
-    ¿Percibiste una marcada pérdida del gusto (sabor de los alimentos) de manera repentina?<br>
-    <input type="radio" id="gusto" name="answer" value="Si"> Si <input type="radio" id="gusto2" name="answer" value="No"> No <br>
-    ¿Tenés tos?<br>
-    <input type="radio" id="tos" name="answer" value="Si"> Si <input type="radio" id="tos2" name="answer" value="No"> No <br>
-    ¿Tenés dolor de garganta?<br>
-    <input type="radio" id="garganta" name="answer" value="Si"> Si <input type="radio" id="garganta2" name="answer" value="No"> No <br>
-    ¿Tenés dificultad respiratoria o falta de aire?<br>
-    <input type="radio" id="aire" name="answer" value="Si"> Si <input type="radio" id="aire2" name="answer" value="No"> No <br>
-    ¿Tenés dolor de cabeza?<br>
-    <input type="radio" id="cabeza" name="answer" value="Si"> Si <input type="radio" id="cabeza2" name="answer" value="No"> No <br>
-    ¿Tenés diarrea?<br>
-    <input type="radio" id="diarrea" name="answer" value="Si"> Si <input type="radio" id="diarrea2" name="answer" value="No"> No <br>
-    ¿Tenés vómitos?<br>
-    <input type="radio" id="vomito" name="answer" value="Si"> Si <input type="radio" id="vomito2" name="answer" value="No"> No <br>
-    ¿Tenés dolor muscular?<br>
-     <input type="radio" id="dolor" name="answer" value="Si"> Si <input type="radio" id="dolor2" name="answer" value="No"> No <br>
-
+     ¿Percibiste una marcada pérdida del olfato de manera repentina?
+    <input type="checkbox" id="olfato" name="answer" value="Si"><br>
+    ¿Percibiste una marcada pérdida del gusto (sabor de los alimentos) de manera repentina?
+    <input type="checkbox" id="gusto" name="answer" value="Si"><br>
+    ¿Tenés tos?
+    <input type="checkbox" id="tos" name="answer" value="Si"><br>
+    ¿Tenés dolor de garganta?
+    <input type="checkbox" id="garganta" name="answer" value="Si"><br>
+    ¿Tenés dificultad respiratoria o falta de aire?
+    <input type="checkbox" id="aire" name="answer" value="Si"><br>
+    ¿Tenés dolor de cabeza?
+    <input type="checkbox" id="cabeza" name="answer" value="Si"><br>
+    ¿Tenés diarrea?
+    <input type="checkbox" id="diarrea" name="answer" value="Si"><br>
+    ¿Tenés vómitos?
+    <input type="checkbox" id="vomito" name="answer" value="Si"><br>
+    ¿Tenés dolor muscular?
+     <input type="checkbox" id="dolor" name="answer" value="Si"><br>
     </form>
+
+    <router-link to="/">
+  <input type="submit" class="fadeIn fourth" value="Submit">
+</router-link>
 </div>
 </div>
     </div>

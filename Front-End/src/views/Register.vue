@@ -8,25 +8,17 @@
       <input type="text" id="register" class="fadeIn second" name="register" placeholder="Correo Electrónico">
       <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
       <input type="password" id="repassword" class="fadeIn third" name="repassword" placeholder="Confirmar contraseña"><br>
-      <input type="radio" id="male" name="gender" value="male">
-      <label for="male">Hombre</label>
-      <input type="radio" id=female name="gender" value="female">
-      <label for="female">Mujer</label>
-      <input type="radio" id="other" name="gender" value="other">
-      <label for="female">Otro</label>
-
+      <br>
+      Sexo: <select>
+        <option>Hombre</option>
+        <option>Mujer</option>
+        <option>Otro</option>
+         </select><br>
+      Fec. Nacimiento <input type="date" id="date"><br>
       <router-link to="/diagnostico">
       <input type="submit" class="fadeIn fourth" value="Register" v-on:click="signUp">
       </router-link>
     </form>
-
-    <!-- Remind Passowrd -->
-    <div id="formFooter">
-      <div id="components-demo">
-  <button-counter></button-counter>
-</div>
-    </div>
-
   </div>
 </div>
     </div>

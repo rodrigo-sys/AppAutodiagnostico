@@ -1,21 +1,10 @@
 import axios from 'axios';
+import config from '../resources/config.js';
 
-const API_URL = 'http://localhost:8080/api/test/';
-
-class UserService {
-  getPublicContent() {
-    return axios.get(API_URL + 'all');
-  }
-}
-import axios from 'axios';
-import authHeader from './auth-header';
-
-const API_URL = 'http://localhost:8080/api/test/';
 
 class UserService {
   getPublicContent() {
-    return axios.get(API_URL + 'all');
+    return axios.get(config.API_URL + 'all');
   }
 }
-
 export default new UserService();

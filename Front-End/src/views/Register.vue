@@ -1,7 +1,25 @@
 <template>
     <div class="Home">
     <div class="wrapper fadeInDown">
- <img src="../assets/ine.png" width="450">
+<div id="formContent">
+    <br><br><br>
+    <form>
+       <input type="text" id="register" class="fadeIn second" name="register" placeholder="Nombre y Apellido">
+      <input type="text" id="register" class="fadeIn second" name="register" placeholder="Correo Electrónico">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
+      <input type="password" id="repassword" class="fadeIn third" name="repassword" placeholder="Confirmar contraseña"><br>
+      <br>
+      Sexo: <select>
+        <option>Hombre</option>
+        <option>Mujer</option>
+        <option>Otro</option>
+         </select><br>
+      Fec. Nacimiento <input type="date" id="date"><br>
+      <router-link to="/diagnostico">
+      <input type="submit" class="fadeIn fourth" value="Register" v-on:click="signUp">
+      </router-link>
+    </form>
+  </div>
 </div>
     </div>
 </template>
@@ -9,7 +27,7 @@
 <script>
 
 export default {
-  name: 'home',
+  name: 'register',
 
   methods: {
     signUp: function () {

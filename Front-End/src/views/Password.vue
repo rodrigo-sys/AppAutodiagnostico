@@ -1,7 +1,11 @@
 <template>
     <div class="Home">
     <div class="wrapper fadeInDown">
- <img src="../assets/ine.png" width="450">
+<h2>Recupera tu cuenta</h2>
+<form>
+    <input type="text" id="recuperar" class="fadeIn second" name="recuperar" placeholder="Introduzca su email">
+</form>
+  <input type="submit" class="fadeIn fourth"  v-on:click="recuperar" value="Aceptar">
 </div>
     </div>
 </template>
@@ -12,7 +16,7 @@ export default {
   name: 'home',
 
   methods: {
-    signUp: function () {
+    recuperar: function () {
     //  Codigo para logearse
     }
   }
@@ -43,7 +47,6 @@ h2 {
   text-transform: uppercase;
   display:inline-block;
   margin: 40px 8px 10px 8px;
-  color: #cccccc;
 }
 
 /* STRUCTURE */

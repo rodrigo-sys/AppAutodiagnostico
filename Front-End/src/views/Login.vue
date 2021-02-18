@@ -1,7 +1,29 @@
 <template>
     <div class="Home">
     <div class="wrapper fadeInDown">
- <img src="../assets/ine.png" width="450">
+<div id="formContent">
+    <br><br><br>
+    <form>
+      <input type="text" id="login" class="fadeIn second" name="login" placeholder="Correo Electronico">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="Contraseña">
+      <input type="submit" class="fadeIn fourth" value="Log In" v-on:click="signUp">
+
+      <router-link to="/register">
+  <input type="submit" class="fadeIn fourth" value="Register">
+</router-link>
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+         <router-link to="/password">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+      </router-link>
+      <div id="components-demo">
+  <button-counter></button-counter>
+</div>
+    </div>
+
+  </div>
 </div>
     </div>
 </template>
@@ -9,7 +31,7 @@
 <script>
 
 export default {
-  name: 'home',
+  name: 'login',
 
   methods: {
     signUp: function () {

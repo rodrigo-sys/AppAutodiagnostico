@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Route;
 
 class RouteServiceProvider extends ServiceProvider
 {
-    protected $namespace = 'App\Http\Controllers';
     /**
      * This namespace is applied to your controller routes.
      *

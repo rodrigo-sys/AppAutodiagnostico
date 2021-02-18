@@ -1,11 +1,10 @@
 import axios from 'axios';
-
-const API_URL = 'http://localhost:8080/api/auth/';
+import config from '../resources/config.js';
 
 class AuthService {
   login(user) {
     return axios
-      .post(API_URL + 'signin', {
+      .post(config.JWT_URL + 'signin', {
         username: user.email,
         password: user.password
       })
@@ -26,7 +25,7 @@ class AuthService {
     return axios.post(API_URL + 'signup', {
       username: user.username,
       emailus: user.email,
-      password: er.password
+      password: user.password
     });
   }
 }

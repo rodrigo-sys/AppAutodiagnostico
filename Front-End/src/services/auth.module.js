@@ -22,33 +22,33 @@ export const auth = {
       );
     },
     register({ commit }, user) {
-        return AuthService.register(user).then(
-          response => {
-            commit('registerSuccess');
-            return Promise.resolve(response.data);
-          },
-          error => {
-            commit('registerFailure');
-            return Promise.reject(error);
-          }
-        );
-      }
-    },
-    mutations: {
-        loginSuccess(state, user) {
-          state.status.loggedIn = true;
-          state.user = user;
+      return AuthService.register(user).then(
+        response => {
+          commit('registerSuccess');
+          return Promise.resolve(response.data);
         },
-        loginFailure(state) {
-          state.status.loggedIn = false;
-          state.user = null;
-        },
-        registerSuccess(state) {
-          state.status.loggedIn = true;
-          state.user = user;
-        },
-        registerFailure(state) {
-          state.status.loggedIn = false;
+        error => {
+          commit('registerFailure');
+          return Promise.reject(error);
         }
-      }
+      );
+    }
+  },
+  mutations: {
+    loginSuccess(state, user) {
+      state.status.loggedIn = true;
+      state.user = user;
+    },
+    loginFailure(state) {
+      state.status.loggedIn = false;
+      state.user = null;
+    },
+    registerSuccess(state) {
+      state.status.loggedIn = true;
+      state.user = user;
+    },
+    registerFailure(state) {
+      state.status.loggedIn = false;
+    }
+  }
 }

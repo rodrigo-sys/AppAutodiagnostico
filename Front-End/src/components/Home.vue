@@ -1,9 +1,10 @@
 <template>
-    <div class="Home">
+  <div class="Home">
     <div class="wrapper fadeInDown">
- <img src="../assets/ine.png" width="450">
-</div>
+      <img src="../assets/ine.png" width="450">
+
     </div>
+  </div>
 </template>
 
 <script>
@@ -12,9 +13,6 @@ export default {
   name: 'home',
 
   methods: {
-    signUp: function () {
-    //  Codigo para logearse
-    }
   }
 }
 </script>

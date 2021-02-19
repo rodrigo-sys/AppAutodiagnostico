@@ -29,16 +29,13 @@
                         type="submit"
                         class="fadeIn fourth"
                         value="Log In"
-                        v-on:click="signUp"
+                        v-on:click="signIn"
                     />
-
-                    <router-link to="/register">
-                        <input
-                            type="submit"
-                            class="fadeIn fourth"
-                            value="Register"
-                        />
-                    </router-link>
+                    <input
+                        type="submit"
+                        class="fadeIn fourth"
+                        value="Register"
+                    />
                 </form>
 
                 <!-- Remind Passowrd -->
@@ -59,8 +56,9 @@
 export default {
     name: "login",
     methods: {
-        signUp: function () {
-            //  Codigo para logearse
+        signIn: function () {
+            this.$router.push("/home");
+            // Codigo para logearse
         },
     },
 };

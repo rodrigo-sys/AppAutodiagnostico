@@ -29,18 +29,18 @@ const router = new Router({
     {
       path: '/home',
       name: 'Home',
-      component: About
+      component: Home
     },
     {
       path: '/password',
       name: 'Password',
-      component: Home
+      component: Password
     },
     {
 
       path: '/about',
       name: 'about',
-      component: Password
+      component: About
     }
   ]
 })

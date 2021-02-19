@@ -53,7 +53,7 @@
 </template>
 
 <script>
-import Register from '@/css/Register.css'
+import Styles from '@/css/Register.css'
 export default {
   name: 'Register',
 

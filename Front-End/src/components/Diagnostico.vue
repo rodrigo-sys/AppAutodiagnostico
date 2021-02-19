@@ -84,7 +84,7 @@
 </template>
 
 <script>
-import Diagnostico from '@/css/Diagnostico.css'
+import Styles from '@/css/Diagnostico.css'
 export default {
     name: "login",
 

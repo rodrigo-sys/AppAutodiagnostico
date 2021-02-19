@@ -34,15 +34,15 @@
                     <input
                         type="submit"
                         class="fadeIn fourth"
-                        value="Register"
+                        value="Sign Up"
+                        v-on:click="signUp"
                     />
                 </form>
 
                 <!-- Remind Passowrd -->
                 <div id="formFooter">
-                    <router-link to="/password">
-                        <a class="underlineHover" href="#">Forgot Password?</a>
-                    </router-link>
+                        <a class="underlineHover" href="#" v-on:click="password">
+                            Forgot Password?</a>
                     <div id="components-demo">
                         <button-counter></button-counter>
                     </div>
@@ -58,10 +58,21 @@ export default {
     methods: {
         signIn: function () {
             this.$router.push("/home");
-            // Codigo para logearse
+            // Codigo para logearse 
         },
-    },
-};
+
+        signUp: function () {
+            this.$router.push("/register");
+        // Codigo para registrarse
+        },
+
+        password: function (){
+            this.$router.push("/password");
+            // Forgot Password
+        }
+        },
+    };
+
 </script>
 
 <style scoped>

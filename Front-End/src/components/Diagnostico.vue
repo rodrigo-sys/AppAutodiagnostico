@@ -11,7 +11,7 @@
                         type="checkbox"
                         id="olfato"
                         name="answer"
-                        value="Si"
+                        value="Si" 
                     /><br />
                     ¿Percibiste una marcada pérdida del gusto (sabor de los
                     alimentos) de manera repentina?

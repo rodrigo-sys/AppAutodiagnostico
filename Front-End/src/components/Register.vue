@@ -40,14 +40,12 @@
                         <option>Otro</option></select
                     ><br />
                     Fec. Nacimiento <input type="date" id="date" /><br />
-                    <router-link to="/diagnostico">
-                        <input
+                        <input v-onclick
                             type="submit"
                             class="fadeIn fourth"
-                            value="Register"
-                            v-on:click="signUp"
+                            value="Sign Up"
+                            v-on:click="diagnostico"
                         />
-                    </router-link>
                 </form>
             </div>
         </div>
@@ -56,13 +54,12 @@
 
 <script>
 export default {
-    name: "register",
+  name: 'Register',
 
-    methods: {
-        signUp: function () {
-            //  Codigo para logearse
-        },
-    },
+  methods:{   diagnostico: function () {
+            this.$router.push("/diagnostico");
+  }
+}
 };
 </script>
 

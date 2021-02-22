@@ -1,6 +1,7 @@
 <template>
   <div class="Home">
     <div class="wrapper fadeInDown">
+     <div class="container-fluid">
       <img src="../assets/ine.png" width="450" />
       <form>
         <input 
@@ -9,7 +10,16 @@
           value="Diagnostico"
           v-on:click="diagnostico"
         />
+
+ <input 
+          type="submit"
+          class="fadeIn fourth"
+          value="LogOut"
+          v-on:click="LogOut"
+        />
           </form>
+  
+</div>
     </div>
   </div>
 </template>
@@ -22,8 +32,11 @@ export default {
   methods:{  
     diagnostico: function () {
        this.$router.push("/diagnostico");
+  },
+    LogOut: function () {
+       
   }
 },
 };
-import Home from '@/css/Home.css'
+import styles from '@/css/Home.css'
 </script>

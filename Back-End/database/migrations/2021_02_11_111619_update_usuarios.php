@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateUsuraios extends Migration
+class UpdateUsuarios extends Migration
 {
     /**
      * Run the migrations.
@@ -15,7 +15,8 @@ class UpdateUsuraios extends Migration
     {
         Schema::table('users', function (Blueprint $table) 
         {
-            $table->year('Fecha_Nacimiento');
+            $table->date('Fecha_Nacimiento');
+            $table->string('Sexo');
             $table->boolean('Tos_Seca');
             $table->boolean('Fiebre');
             $table->boolean('cansancio');
@@ -44,6 +45,7 @@ class UpdateUsuraios extends Migration
         schema::table('users', function (Blueprint $table)
         {
             $table->dropColumn('Fecha_Nacimiento');
+            $table->dropColumn('Sexo');
             $table->dropColumn('Tos_Seca');
             $table->dropColumn('Fiebre');
             $table->dropColumn('cansancio');

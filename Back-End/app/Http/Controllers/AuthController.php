@@ -14,16 +14,17 @@ class AuthController extends Controller
 {
     /**
      * Create a new AuthController instance.
-     *
+     * Aca lo que hace es dar negar el acceso a las paginas a excepcion del login, register y refresh
      * @return void
      */
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login']]);
+        $this->middleware('auth:api', ['except' => ['login', 'register', 'refresh']]);
     }
 
     /**
      * Get a JWT via given credentials.
+     * Valida que el email y contraseña ingresados concuerden con una cuenta ya creada
      *
      * @return \Illuminate\Http\JsonResponse
      */

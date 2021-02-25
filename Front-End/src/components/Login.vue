@@ -7,10 +7,11 @@
                 </div>
             </nav>
         </header>
+     <ventanaerror />
         <div class="wrapper fadeInDown"> 
             <div id="formContent">
                 <br /><br /><br />
-                <form>
+                <form> 
                     <input
                         type="text"
                         id="login"
@@ -25,11 +26,11 @@
                         name="password"
                         placeholder="Contraseña"
                     />
-                    <input
+                    <input 
                         type="submit"
                         class="fadeIn fourth"
                         value="Log In"
-                        v-on:click="signIn"
+                       v-on:click="signIn" 
                     />
                     <input
                         type="submit"
@@ -54,14 +55,18 @@
 
 <script>
 import Styles from '@/css/Login.css'
+import ventanaerror from './VentanaError';
 export default {
     name: "login",
+    components: {
+        ventanaerror,
+    },
     methods: {
         signIn: function () {
             this.$router.push("/home");
+    
             // Codigo para logearse 
         },
-
         signUp: function () {
             this.$router.push("/register");
         // Codigo para registrarse

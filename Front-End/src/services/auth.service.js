@@ -4,7 +4,7 @@ import config from '../resources/config.js';
 class AuthService {
   login(user) {
     return axios
-      .post(config.JWT_URL + 'signin', {
+      .post(config.JWT_URL + 'login', {
         username: user.email,
         password: user.password
       })
@@ -22,9 +22,9 @@ class AuthService {
   }
 
   register(user) {
-    return axios.post(API_URL + 'signup', {
+    return axios.post(API_URL + 'register', {
       username: user.username,
-      emailus: user.email,
+      email: user.email,
       password: user.password
     });
   }

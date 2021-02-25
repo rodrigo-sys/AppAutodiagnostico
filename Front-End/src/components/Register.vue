@@ -10,6 +10,7 @@
                         class="fadeIn second"
                         name="register"
                         placeholder="Nombre y Apellido"
+                        v-model="name"
                     />
                     <input
                         type="text"
@@ -17,6 +18,7 @@
                         class="fadeIn second"
                         name="register"
                         placeholder="Correo Electrónico"
+                        v-model="email"
                     />
                     <input
                         type="password"
@@ -24,6 +26,7 @@
                         class="fadeIn third"
                         name="password"
                         placeholder="Contraseña"
+                        v-model="password"
                     />
                     <input
                         type="password"
@@ -34,18 +37,19 @@
                     /><br />
                     <br />
                     Sexo:
-                    <select>
+                    <select v-model="sex">
                         <option>Hombre</option>
                         <option>Mujer</option>
-                        <option>Otro</option></select
-                    ><br />
-                    Fec. Nacimiento <input type="date" id="date" /><br />
+                        <option>Otro</option>
+                    </select>
+                    <br />
+                    Fec. Nacimiento <input v-model="dateob" type="date" id="date" /><br />
                     <router-link to="/diagnostico">
                         <input
                             type="submit"
                             class="fadeIn fourth"
                             value="Register"
-                            v-on:click="signUp"
+                            v-on:click="register"
                         />
                     </router-link>
                 </form>
@@ -55,12 +59,30 @@
 </template>
 
 <script>
+import auth from "../services/auth.service"
+import user from "../models/user"
+
 export default {
     name: "register",
-
+    data() {
+        return {
+            password: "",
+            email: "",
+            name: "",
+            sex: "",
+            dateob: new Date(),
+        };
+    },
+    mounted: function() {
+    },
     methods: {
-        signUp: function () {
-            //  Codigo para logearse
+        register() {
+            email = email;
+            password = password;
+            name = name;
+            sex = sex;
+            dateob = dateob;
+            auth.login(user);
         },
     },
 };

@@ -17,6 +17,7 @@
                         class="fadeIn second"
                         name="login"
                         placeholder="Correo Electronico"
+                        v-model="email"
                     />
                     <input
                         type="password"
@@ -24,12 +25,13 @@
                         class="fadeIn third"
                         name="password"
                         placeholder="Contraseña"
+                        v-model="password"
                     />
                     <input
                         type="submit"
                         class="fadeIn fourth"
                         value="Log In"
-                        v-on:click="signUp"
+                        v-on:click="login"
                     />
 
                     <router-link to="/register">
@@ -47,7 +49,6 @@
                         <a class="underlineHover" href="#">Forgot Password?</a>
                     </router-link>
                     <div id="components-demo">
-                        <button-counter></button-counter>
                     </div>
                 </div>
             </div>
@@ -56,11 +57,24 @@
 </template>
 
 <script>
+import auth from "../services/auth.service"
+import user from "../models/user"
+
 export default {
     name: "login",
+    data() {
+        return {
+            password: "",
+            email: "",
+        };
+    },
+    mounted: function() {
+    },
     methods: {
-        signUp: function () {
-            //  Codigo para logearse
+        login() {
+            user.password = password;
+            user.email = email;
+            auth.login(user);
         },
     },
 };

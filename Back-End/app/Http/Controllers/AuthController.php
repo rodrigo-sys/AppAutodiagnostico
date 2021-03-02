@@ -59,6 +59,9 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
+        return response()->json([
+            'message' => 'User successfully registered',
+        ], 201);
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|between:2,100',
             'email' => ['bail', 'required', 'string', 'email:dns', 'max:255', 'unique:users'],

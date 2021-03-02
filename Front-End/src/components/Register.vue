@@ -6,48 +6,49 @@
                 <form>
                     <input
                         type="text"
-                        id="register"
+                        id="name-input"
                         class="fadeIn second"
-                        name="register"
+                        name="name-input"
                         placeholder="Nombre y Apellido"
+                        v-model="name"
                     />
                     <input
                         type="text"
-                        id="register"
+                        id="email-input"
                         class="fadeIn second"
-                        name="register"
+                        name="email-input"
                         placeholder="Correo Electrónico"
+                        v-model="email"
                     />
                     <input
                         type="password"
-                        id="password"
+                        id="password-input"
                         class="fadeIn third"
-                        name="password"
+                        name="password-input"
                         placeholder="Contraseña"
+                        v-model="password"
                     />
                     <input
                         type="password"
-                        id="repassword"
+                        id="repassword-input"
                         class="fadeIn third"
-                        name="repassword"
+                        name="repassword-input"
                         placeholder="Confirmar contraseña"
-                    /><br />
+                    />
+                    <br />
                     <br />
                     Sexo:
-                    <select>
-                        <option>Hombre</option>
-                        <option>Mujer</option>
-                        <option>Otro</option></select
-                    ><br />
-                    Fec. Nacimiento <input type="date" id="date" /><br />
-                    <router-link to="/diagnostico">
-                        <input
-                            type="submit"
-                            class="fadeIn fourth"
-                            value="Register"
-                            v-on:click="signUp"
-                        />
-                    </router-link>
+                    <select v-model="sex">
+                        <option>Masculino</option>
+                        <option>Femenino</option>
+                        <option>Otro</option>
+                    </select>
+                    <br />
+                    Fec. Nacimiento <input v-model="dateob" type="date" id="date" /><br />
+                    <button
+                        class="btn btn-secondary fadeIn fourth"
+                        @click.prevent="register"
+                    > Register </button>
                 </form>
             </div>
         </div>
@@ -55,12 +56,27 @@
 </template>
 
 <script>
+import auth from "../services/auth.service"
+import User from "../models/user"
+
 export default {
     name: "register",
-
+    data() {
+        return {
+            password: "",
+            email: "",
+            name: "",
+            sex: "",
+            dateob: new Date(),
+        };
+    },
+    mounted: function() {
+    },
     methods: {
-        signUp: function () {
-            //  Codigo para logearse
+        register() {
+            var user = new User(this.email, this.password,this.name, this.sex, this.dateob)
+            auth.login(user);
+            //this.$router.push("/login");
         },
     },
 };

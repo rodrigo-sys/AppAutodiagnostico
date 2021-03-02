@@ -24,15 +24,21 @@ class AuthService {
     localStorage.removeItem('user');
   }
 
-  register(user) {e
+  register(user) {
     const headers = {
       'Content-Type': 'application/json',
     }
-    return axios.post(API_URL + 'register', {
-      username: user.username,
-      email: user.email,
-      password: user.password
-    },{headers: headers});
+    return axios
+      .get(config.JWT_URL + 'register', {
+        username: user.username,
+        email: user.email,
+        password: user.password
+      },{headers: headers})
+      .then(response => {
+        //this.$router.push("/login");
+        console.log(response)
+        return response.data;
+      });
   }
 }
 

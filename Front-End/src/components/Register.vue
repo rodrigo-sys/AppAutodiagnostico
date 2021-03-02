@@ -75,7 +75,7 @@ export default {
     methods: {
         register() {
             var user = new User(this.email, this.password,this.name, this.sex, this.dateob)
-            auth.login(user);
+            auth.register(user);
             //this.$router.push("/login");
         },
     },

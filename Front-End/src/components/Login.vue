@@ -49,7 +49,6 @@
                         <a class="underlineHover" href="#">Forgot Password?</a>
                     </router-link>
                     <div id="components-demo">
-                        <button-counter></button-counter>
                     </div>
                 </div>
             </div>

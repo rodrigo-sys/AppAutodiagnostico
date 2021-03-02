@@ -3,11 +3,14 @@ import config from '../resources/config.js';
 
 class AuthService {
   login(user) {
+    const headers = {
+      'Content-Type': 'application/json',
+    }
     return axios
       .post(config.JWT_URL + 'login', {
         username: user.email,
         password: user.password
-      })
+      },{headers: headers})
       .then(response => {
         if (response.data.accessToken) {
           localStorage.setItem('user', JSON.stringify(response.data));
@@ -21,12 +24,15 @@ class AuthService {
     localStorage.removeItem('user');
   }
 
-  register(user) {
+  register(user) {e
+    const headers = {
+      'Content-Type': 'application/json',
+    }
     return axios.post(API_URL + 'register', {
       username: user.username,
       email: user.email,
       password: user.password
-    });
+    },{headers: headers});
   }
 }
 

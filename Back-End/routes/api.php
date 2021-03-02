@@ -23,10 +23,11 @@ Route::group([
 
 ], 
     function ($router) {
-    Route::get('login', 'AuthController@login');
-    Route::get('logout', 'AuthController@logout');
-    Route::get('refresh', 'AuthController@refresh');
-    Route::get('me', 'AuthController@me');
+    Route::post('login', 'AuthController@login');
+    Route::post('register', 'AuthController@register');
+    Route::post('logout', 'AuthController@logout');
+    Route::post('refresh', 'AuthController@refresh');
+    Route::post('me', 'AuthController@me');
 
     // http://localhost:8000/api/auth/register?name=Horacio&email=horaciomateos@gmail.com&password=123456
     // Route::post('login', 'AuthController@login');
@@ -40,13 +41,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('todo', 'PersonaController@index');
+Route::post('todo', 'PersonaController@index');
 
-Route::get('probame', 'PersonaController@anda');
-Route::get('apellido', 'PersonaController@apellido');
-Route::get('sintomas', 'PersonaController@sintomas');
-Route::get('datos', 'PersonaController@datos');
-Route::get('/mostrar/{id}', 'PersonaController@mostrarDatosPersonas');
+Route::post('probame', 'PersonaController@anda');
+Route::post('apellido', 'PersonaController@apellido');
+Route::post('sintomas', 'PersonaController@sintomas');
+Route::post('datos', 'PersonaController@datos');
+Route::post('/mostrar/{id}', 'PersonaController@mostrarDatosPersonas');
 
 
 

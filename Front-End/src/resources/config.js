@@ -1,5 +1,5 @@
 const HOST = 'localhost';
-const PORT = 8080;
+const PORT = 8000;
 
 const config = {
     HOST: HOST,

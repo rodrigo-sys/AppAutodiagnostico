@@ -25,15 +25,12 @@ class AuthService {
   }
 
   register(user) {
-    const headers = {
-      'Content-Type': 'application/json',
-    }
+    const params = new URLSearchParams();
+    params.append("username", user.username);
+    params.append("email", user.email);
+    params.append("password", user.password);
     return axios
-      .get(config.JWT_URL + 'register', {
-        username: user.username,
-        email: user.email,
-        password: user.password
-      },{headers: headers})
+      .post(config.JWT_URL + 'register', params, config.getJwtConfig())
       .then(response => {
         //this.$router.push("/login");
         console.log(response)

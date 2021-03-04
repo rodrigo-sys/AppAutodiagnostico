@@ -1,5 +1,6 @@
 import axios from 'axios';
-import config from '../resources/config.js';
+import config from '@/resources/config.js';
+import header from '@/resources/auth.header.js';
 
 class AuthService {
   login(user) {
@@ -30,7 +31,7 @@ class AuthService {
     params.append("email", user.email);
     params.append("password", user.password);
     return axios
-      .post(config.JWT_URL + 'register', params, config.getJwtConfig())
+      .post(config.JWT_URL + 'register', params, {headers: header()})
       .then(response => {
         //this.$router.push("/login");
         console.log(response)

@@ -13,11 +13,12 @@
                 <br /><br /><br />
                 <form> 
                     <input
-                        type="text"
+                        type="email"
                         id="login"
                         class="fadeIn second"
                         name="login"
                         placeholder="Correo Electronico"
+                        required
                     />
                     <input
                         type="password"
@@ -25,7 +26,10 @@
                         class="fadeIn third"
                         name="password"
                         placeholder="Contraseña"
+                        required
+                        minlength="8"
                     />
+                <abbr title="Este campo es obligatorio" aria-label="required"></abbr>
                     <input 
                         type="submit"
                         class="fadeIn fourth"
@@ -63,7 +67,9 @@ export default {
     },
     methods: {
         signIn: function () {
+            <button></button>
             this.$router.push("/home");
+
     
             // Codigo para logearse 
         },

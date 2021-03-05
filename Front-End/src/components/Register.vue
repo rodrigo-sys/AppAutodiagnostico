@@ -44,11 +44,15 @@
                         <option>Otro</option>
                     </select>
                     <br />
-                    Fec. Nacimiento <input v-model="dateob" type="date" id="date" /><br />
+                    Fec. Nacimiento
+                    <input v-model="dateob" type="date" id="date" />
+                    <br />
                     <button
                         class="btn btn-secondary fadeIn fourth"
                         @click.prevent="register"
-                    > Register </button>
+                    >
+                        Register
+                    </button>
                 </form>
             </div>
         </div>
@@ -56,9 +60,9 @@
 </template>
 
 <script>
-import Styles from '@/css/Register.css'
-import auth from "../services/auth.service"
-import User from "../models/user"
+import Styles from "@/css/Register.css";
+import auth from "../services/auth.service";
+import User from "../models/user";
 
 export default {
     name: "register",
@@ -71,11 +75,16 @@ export default {
             dateob: new Date(),
         };
     },
-    mounted: function() {
-    },
+    mounted: function () {},
     methods: {
         register() {
-            var user = new User(this.email, this.password,this.name, this.sex, this.dateob)
+            var user = new User(
+                this.email,
+                this.password,
+                this.name,
+                this.sex,
+                this.dateob
+            );
             auth.register(user);
             //this.$router.push("/login");
         },

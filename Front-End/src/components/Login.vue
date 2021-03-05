@@ -7,11 +7,11 @@
                 </div>
             </nav>
         </header>
-     <ventanaerror />
-        <div class="wrapper fadeInDown"> 
+        <ventanaerror />
+        <div class="wrapper fadeInDown">
             <div id="formContent">
                 <br /><br /><br />
-                <form> 
+                <form>
                     <input
                         type="text"
                         id="login"
@@ -28,26 +28,25 @@
                         placeholder="Contraseña"
                         v-model="password"
                     />
-                    <input 
+                    <input
                         type="submit"
                         class="fadeIn fourth"
                         value="Log In"
                         v-on:click="login"
+                    />
                     <input
                         type="submit"
                         class="fadeIn fourth"
                         value="Sign Up"
-                        v-on:click="signUp"
-                    />
+                        @click.prevent="register"
                     />
                 </form>
-
                 <!-- Remind Passowrd -->
                 <div id="formFooter">
-                        <a class="underlineHover" href="#" v-on:click="password">
-                            Forgot Password?</a>
-                    <div id="components-demo">
-                    </div>
+                    <a class="underlineHover" href="#" v-on:click="password">
+                        Forgot Password?
+                    </a>
+                    <div id="components-demo"></div>
                 </div>
             </div>
         </div>
@@ -55,10 +54,10 @@
 </template>
 
 <script>
-import Styles from '@/css/Login.css'
-import ventanaerror from './VentanaError';
-import auth from "../services/auth.service"
-import user from "../models/user"
+import Styles from "@/css/Login.css";
+import ventanaerror from "./VentanaError";
+import auth from "../services/auth.service";
+import user from "../models/user";
 
 export default {
     name: "login",
@@ -71,8 +70,7 @@ export default {
             email: "",
         };
     },
-    mounted: function() {
-    },
+    mounted: function () {},
     methods: {
         login() {
             user.password = password;
@@ -80,10 +78,14 @@ export default {
             auth.login(user);
         },
 
-        password: function (){
+        password: function () {
             this.$router.push("/password");
             // Forgot Password
-        }
         },
-    };
+        register: function () {
+            this.$router.push("/register");
+            // Forgot Password
+        },
+    },
+};
 </script>

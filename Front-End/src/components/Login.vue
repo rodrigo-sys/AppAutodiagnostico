@@ -66,16 +66,28 @@ export default {
     },
     data() {
         return {
+            user: new User('', ''),
+            loading: false,
+            message: '',
             password: "",
             email: "",
         };
+    },
+    computed: {
+        loggedIn() {
+        return this.$store.state.auth.status.loggedIn;
+        }
+    },
+    created() {
+        if (this.loggedIn) {
+        this.$router.push('/profile');
+        }
     },
     mounted: function () {},
     methods: {
         login() {
             user.password = password;
             user.email = email;
-            auth.login(user);
         },
 
         password: function () {

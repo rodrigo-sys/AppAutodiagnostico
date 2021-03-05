@@ -84,14 +84,6 @@ export default {
     },
     methods: {
         register(user) {
-            /*var user = new User(
-                this.email,
-                this.password,
-                this.name,
-                this.sex,
-                this.dateob
-            );*/
-            auth.register(user);
             //this.$router.push("/login");
         },
     },

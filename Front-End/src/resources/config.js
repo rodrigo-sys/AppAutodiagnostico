@@ -8,4 +8,3 @@ const config = {
     API_URL: 'http://' + HOST + ':' + PORT + '/api/',
 }
 export default config;
-    

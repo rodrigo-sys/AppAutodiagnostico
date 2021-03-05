@@ -75,16 +75,22 @@ export default {
             dateob: new Date(),
         };
     },
-    mounted: function () {},
+    mounted: function () {
+        this.register({
+            email: "asdf@gmail.com",
+            name: "asdf",
+            password: "123456",
+        });
+    },
     methods: {
-        register() {
-            var user = new User(
+        register(user) {
+            /*var user = new User(
                 this.email,
                 this.password,
                 this.name,
                 this.sex,
                 this.dateob
-            );
+            );*/
             auth.register(user);
             //this.$router.push("/login");
         },

@@ -6,24 +6,39 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
+use Faker\Factory;
 
 class DatosSeeder extends Seeder
 {
     
     public function run()
     {
+        $faker = Factory::create('es_AR');
         DB::table('users')->truncate();
         //$this->call(DatosSeeder::class);
 
         DB::table('users')->insert([
-            'name' => str::random(10),
-            
-            'email' => str::random(10).'@gmail.com',
-            'password' => hash::make(10),
-            'Fecha_Nacimiento'=> date::random(10),
-            'sexo' => str::random(10),
-            'Tos_Seca' => true,
-            'Fiebre' => true,
+            'name' => $faker->firstname,
+            'email' => $faker->unique()->safeEmail,
+            'email_verified_at'=> now(),
+            //'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', 
+            'password' => Hash::make('password'),
+
+            //'Fecha_Nacimiento'=> '2001-08-01',
+            'Fecha_Nacimiento'=>$faker->dateTime->format('Y-m-d'),
+            //'sexo' =>rsexo(),
+            // $faker->rsexo(['Masculino', 'Femenino', 'Otro']);
+
+            //'sexo' => $faker->( 'Masculino', 'Femenino', 'Otro'),
+
+            //'Tos_Seca' => int::random(1),
+            //'Fiebre' => int::random(1),
+
+            'sexo' => $faker->randomElement(['male', 'female', 'other']),
+
+
+            'Tos_Seca'=>true,
+            'Fiebre' => false,
             'cansancio' => true,
             'Molestias_Cansancio' => false,
             'Dolor_De_Garganta'=>true,
@@ -41,4 +56,14 @@ class DatosSeeder extends Seeder
         ]);
         //
     }
+/*
+    if (boolean = 1)
+    {
+        return 'si';
+    }
+    else
+    {
+        return 'No';
+    }
+  */  
 }

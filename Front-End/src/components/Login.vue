@@ -18,7 +18,7 @@
                         class="fadeIn second"
                         name="login"
                         placeholder="Correo Electronico"
-                        v-model="email"
+                        v-model="user.email"
                     />
                     <input
                         type="password"
@@ -26,7 +26,7 @@
                         class="fadeIn third"
                         name="password"
                         placeholder="Contraseña"
-                        v-model="password"
+                        v-model="user.password"
                     />
                     <input
                         type="submit"
@@ -57,7 +57,7 @@
 import Styles from "@/css/Login.css";
 import ventanaerror from "./VentanaError";
 import auth from "../services/auth.service";
-import user from "../models/user";
+import User from "../models/user";
 
 export default {
     name: "login",
@@ -66,30 +66,48 @@ export default {
     },
     data() {
         return {
-            user: new User('', ''),
-            loading: false,
-            message: '',
-            password: "",
-            email: "",
+            user: new User("", ""),
+            //loading: false,
+            message: "",
         };
     },
     computed: {
         loggedIn() {
-        return this.$store.state.auth.status.loggedIn;
-        }
+            return this.$store.state.auth.status.loggedIn;
+        },
     },
     created() {
         if (this.loggedIn) {
-        this.$router.push('/profile');
+            this.$router.push("/diagnostico");
         }
     },
-    mounted: function () {},
+    //mounted: function () {},
     methods: {
         login() {
-            user.password = password;
-            user.email = email;
-        },
+            //this.loading = true;
+            // this.$validator.validateAll().then((isValid) => {
+            //if (!isValid) {
+            //    this.loading = false;
+            //    return;
+            //}
 
+            if (this.user.username && this.user.password) {
+                this.$store.dispatch("auth/login", this.user).then(
+                    () => {
+                        this.$router.push("/diagnostico");
+                    },
+                    (error) => {
+                        //this.loading = false;
+                        this.message =
+                            (error.response && error.response.data) ||
+                            error.message ||
+                            error.toString();
+                        console.log(message);
+                    }
+                );
+            }
+            //});
+        },
         password: function () {
             this.$router.push("/password");
             // Forgot Password

@@ -10,7 +10,7 @@
                         class="fadeIn second"
                         name="name-input"
                         placeholder="Nombre y Apellido"
-                        v-model="name"
+                        v-model="user.username"
                     />
                     <input
                         type="text"
@@ -18,7 +18,7 @@
                         class="fadeIn second"
                         name="email-input"
                         placeholder="Correo Electrónico"
-                        v-model="email"
+                        v-model="user.email"
                     />
                     <input
                         type="password"
@@ -26,7 +26,7 @@
                         class="fadeIn third"
                         name="password-input"
                         placeholder="Contraseña"
-                        v-model="password"
+                        v-model="user.password"
                     />
                     <input
                         type="password"
@@ -38,14 +38,14 @@
                     <br />
                     <br />
                     Sexo:
-                    <select v-model="sex">
+                    <select v-model="user.sex">
                         <option>Masculino</option>
                         <option>Femenino</option>
                         <option>Otro</option>
                     </select>
                     <br />
                     Fec. Nacimiento
-                    <input v-model="dateob" type="date" id="date" />
+                    <input v-model="user.dateob" type="date" id="date" />
                     <br />
                     <button
                         class="btn btn-secondary fadeIn fourth"
@@ -68,23 +68,51 @@ export default {
     name: "register",
     data() {
         return {
-            password: "",
-            email: "",
-            name: "",
-            sex: "",
-            dateob: new Date(),
+            user: new User("", "", ""),
+            submitted: false,
+            successful: false,
+            message: "",
         };
     },
+    computed: {
+        loggedIn() {
+            return this.$store.state.auth.status.loggedIn;
+        },
+    },
     mounted: function () {
+        if (this.loggedIn) {
+            this.$router.push("/diagnostico");
+        } /*
         this.register({
             email: "asdf@gmail.com",
             name: "asdf",
             password: "123456",
-        });
+        });*/
     },
     methods: {
-        register(user) {
+        register() {
             //this.$router.push("/login");
+            this.message = "";
+            this.submitted = true;
+            //this.$validator.validate().then((isValid) => {
+            //if (isValid) {
+            this.$store.dispatch("auth/register", this.user).then(
+                data => {
+                    this.message = data.message;
+                    this.successful = true;
+                    console.log(this.message);
+                },
+                error => {
+                    this.message =
+                        (error.response && error.response.data) ||
+                        error.message ||
+                        error.toString();
+                    this.successful = false;
+                    console.log(this.message);
+                }
+            );
+            //}
+            //});
         },
     },
 };

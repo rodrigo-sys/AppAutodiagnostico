@@ -94,7 +94,6 @@ export default {
             if (this.user.email && this.user.password) {
                 this.$store.dispatch("auth/login", this.user).then(
                     () => {
-                        console.log()
                         this.$router.push("/diagnostico")
                     },
                     (error) => {

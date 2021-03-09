@@ -32,7 +32,7 @@
                         type="submit"
                         class="fadeIn fourth"
                         value="Log In"
-                        v-on:click="login"
+                        @click.prevent="login"
                     />
                     <input
                         type="submit"
@@ -83,18 +83,19 @@ export default {
     },
     //mounted: function () {},
     methods: {
-        login() {
+        login: function () {
             //this.loading = true;
-            // this.$validator.validateAll().then((isValid) => {
+            //this.$validator.validateAll().then((isValid) => {
             //if (!isValid) {
             //    this.loading = false;
             //    return;
             //}
 
-            if (this.user.username && this.user.password) {
+            if (this.user.email && this.user.password) {
                 this.$store.dispatch("auth/login", this.user).then(
                     () => {
-                        this.$router.push("/diagnostico");
+                        console.log()
+                        this.$router.push("/diagnostico")
                     },
                     (error) => {
                         //this.loading = false;

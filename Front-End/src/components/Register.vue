@@ -91,7 +91,6 @@ export default {
     },
     methods: {
         register() {
-            //this.$router.push("/login");
             this.message = "";
             this.submitted = true;
             //this.$validator.validate().then((isValid) => {
@@ -101,6 +100,7 @@ export default {
                     this.message = data.message;
                     this.successful = true;
                     console.log(this.message);
+                    this.$router.push("/login");
                 },
                 error => {
                     this.message =

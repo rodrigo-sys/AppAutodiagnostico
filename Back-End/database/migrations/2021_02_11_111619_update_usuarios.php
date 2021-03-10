@@ -13,8 +13,7 @@ class UpdateUsuarios extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) 
-        {
+        Schema::table('users', function (Blueprint $table) {
             $table->date('Fecha_Nacimiento');
             $table->string('Sexo');
             $table->boolean('Tos_Seca');
@@ -42,8 +41,7 @@ class UpdateUsuarios extends Migration
      */
     public function down()
     {
-        schema::table('users', function (Blueprint $table)
-        {
+        schema::table('users', function (Blueprint $table) {
             $table->dropColumn('Fecha_Nacimiento');
             $table->dropColumn('Sexo');
             $table->dropColumn('Tos_Seca');
@@ -61,6 +59,6 @@ class UpdateUsuarios extends Migration
             $table->dropColumn('Dificultad_Para_Respirar');
             $table->dropColumn('Incapacidad_Para_Moverse');
             $table->dropColumn('Dolor/Presión_En_El_Pecho');
-            });        
+        });
     }
 }

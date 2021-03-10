@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import Styles from "@/css/Login.css";
+import styles from "@/css/Login.css";
 import ventanaerror from "@/components/VentanaError";
 
 export default {

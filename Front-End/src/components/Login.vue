@@ -3,7 +3,7 @@
         <navbar />
         <div class="wrapper fadeInDown">
             <div id="formContent">
-                <br /><br /><br />
+                <br /> <!-- EVITAR EL USO DE BR, USAR BOOTSTRAP --><br /> <!-- EVITAR EL USO DE BR, USAR BOOTSTRAP --><br /> <!-- EVITAR EL USO DE BR, USAR BOOTSTRAP -->
                 <form>
                     <input
                         type="text"
@@ -57,9 +57,8 @@
 </template>
 
 <script>
+import styles from "@/css/Login.css";
 import navbar from "@/components/Nav-no-login";
-import Styles from "@/css/Login.css";
-import auth from "@/services/auth.service";
 import User from "@/models/user";
 
 export default {

@@ -31,16 +31,13 @@
 </template>
 <script>
 import styles from "@/css/Sidenav.css";
-import navbar from "@/components/Nav";
+import navbar from "@/components/Nav-no-login";
 export default {
     name: "home",
     components: {
         navbar,
     },
     methods: {
-        diagnostico: function () {
-            this.$router.push("/diagnostico");
-        },
         toggleSidebar() {
             document.getElementById("sidebar").classList.toggle("active");
         },

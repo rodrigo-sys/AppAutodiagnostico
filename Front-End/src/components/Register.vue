@@ -3,7 +3,7 @@
         <navbar />
         <div class="wrapper fadeInDown">
             <div id="formContent">
-                <br /><br /><br />
+                <br /> <!-- EVITAR EL USO DE BR, USAR BOOTSTRAP --><br /> <!-- EVITAR EL USO DE BR, USAR BOOTSTRAP --><br /> <!-- EVITAR EL USO DE BR, USAR BOOTSTRAP -->
                 <form>
                     <input
                         type="text"
@@ -36,17 +36,17 @@
                         name="repassword-input"
                         placeholder="Confirmar contraseña"
                     />
-                    <br />
-                    <br />
+                    <br /> <!-- EVITAR EL USO DE BR, USAR BOOTSTRAP -->
+                    <br /> <!-- EVITAR EL USO DE BR, USAR BOOTSTRAP -->
                     Sexo:
                     <select v-model="user.sex">
                         <option>Hombre</option>
                         <option>Mujer</option>
                         <option>Otro</option>
                     </select>
-                    <br />
+                    <br /> <!-- EVITAR EL USO DE BR, USAR BOOTSTRAP -->
                     Fec. Nacimiento <input type="date" id="date" />
-                    <br />
+                    <br /> <!-- EVITAR EL USO DE BR, USAR BOOTSTRAP -->
                     <button
                         class="btn btn-secondary fadeIn fourth"
                         @click.prevent="register"
@@ -60,9 +60,8 @@
 </template>
 
 <script>
-import Styles from "@/css/Register.css";
+import styles from "@/css/Register.css";
 import navbar from "@/components/Nav-no-login";
-import auth from "@/services/auth.service";
 import User from "@/models/user";
 
 export default {

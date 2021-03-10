@@ -1,14 +1,13 @@
 <template>
     <div class="About">
         <navbar />
-        <br />
+        <br /> <!-- EVITAR EL USO DE BR, USAR BOOTSTRAP -->
         <h1>Bienvenido</h1>
     </div>
 </template>
 <script>
-import Styles from "@/css/Login.css";
+import styles from "@/css/Login.css";
 import ventanaerror from "@/components/VentanaError";
-import auth from "@/services/auth.service";
 import User from "@/models/user";
 import navbar from "@/components/Nav";
 
@@ -26,12 +25,14 @@ export default {
         };
     },
     computed: {
-        loggedIn() {
-            return this.$store.state.auth.status.loggedIn;
+        currentUser() {
+            return this.$store.state.auth.user;
         },
     },
-    //mounted: function () {},
-    methods: {
+    mounted() {
+        if (!this.currentUser) {
+            this.$router.push("/login");
+        }
     },
 };
 </script>

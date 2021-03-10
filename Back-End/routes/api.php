@@ -45,7 +45,7 @@ Route::group(['middleware' => 'auth:api'], function () {
 
     // Esto esta relacionado con los TEST
     Route::get('datos/{name}', function ($name) {
-        //  resolver con un controller, no deberian haber funciones en la api
+        // TODO: resolver con un controller, no deberian haber funciones en la api
         echo "Nombre: ", $name;
     });
 });

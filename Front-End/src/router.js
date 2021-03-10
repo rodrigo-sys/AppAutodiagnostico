@@ -13,6 +13,7 @@ Vue.use(Router);
 export const router = new Router({
   mode: 'history',
   routes: [
+    // No requieren autenticacion
     {
       path: '/login',
       name: 'Login',
@@ -24,11 +25,6 @@ export const router = new Router({
       component: Register
     },
     {
-      path: '/diagnostico',
-      name: 'Diagnostico',
-      component: Diagnostico
-    },
-    {
       path: '/home',
       name: 'Home',
       component: Home
@@ -38,11 +34,18 @@ export const router = new Router({
       name: 'Password',
       component: Password
     },
+    // Requieren autenticacion
+    {
+      path: '/diagnostico',
+      name: 'Diagnostico',
+      component: Diagnostico
+    },
     {
       path: '/about',
       name: 'about',
       component: About
     },
+    // Cualquier otra cosa
     {
       path: '*',
       name: 'Anything',
@@ -56,8 +59,6 @@ router.beforeEach((to, from, next) => {
   const authRequired = !publicPages.includes(to.path);
   const loggedIn = localStorage.getItem('user');
 
-  // trying to access a restricted page + not logged in
-  // redirect to login page
   if (authRequired && !loggedIn) {
     next('/login');
   } else {

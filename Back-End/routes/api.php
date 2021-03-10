@@ -40,7 +40,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('todo', 'PersonaController@index');
+Route::get('usuario/{id}', 'PersonaController@mostrarDatosPersonas');
+Route::get('usuario/{id}/sintomas', 'PersonaController@mostrarSintomasPersonas');
 
 Route::post('probame', 'PersonaController@anda');
 Route::post('apellido', 'PersonaController@apellido');

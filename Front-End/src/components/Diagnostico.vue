@@ -86,12 +86,18 @@
 <script>
 import Styles from "@/css/Diagnostico.css";
 export default {
-    name: "login",
+    name: "diagnostico",
 
-    methods: {
-        signUp: function () {
-            //  Codigo para logearse
+    computed: {
+        currentUser() {
+            return this.$store.state.auth.user;
         },
+    },
+    mounted() {
+        if (!this.currentUser) {
+            this.$router.push("/login");
+        }
     },
 };
 </script>
+

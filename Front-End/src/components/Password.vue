@@ -9,6 +9,7 @@
                     class="fadeIn second"
                     name="recuperar"
                     placeholder="Introduzca su email"
+                    v-model="email"
                 />
             </form>
             <input

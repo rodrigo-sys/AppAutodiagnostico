@@ -6,47 +6,50 @@
                 <form>
                     <input
                         type="text"
-                        id="register"
+                        id="name-input"
                         class="fadeIn second"
-                        name="register"
+                        name="name-input"
                         placeholder="Nombre y Apellido"
+                        v-model="user.username"
                     />
                     <input
                         type="text"
-                        id="register"
+                        id="email-input"
                         class="fadeIn second"
-                        name="register"
+                        name="email-input"
                         placeholder="Correo Electrónico"
+                        v-model="user.email"
                     />
                     <input
                         type="password"
-                        id="password"
+                        id="password-input"
                         class="fadeIn third"
-                        name="password"
+                        name="password-input"
                         placeholder="Contraseña"
+                        v-model="user.password"
                     />
                     <input
                         type="password"
-                        id="repassword"
+                        id="repassword-input"
                         class="fadeIn third"
-                        name="repassword"
+                        name="repassword-input"
                         placeholder="Confirmar contraseña"
-                    /><br />
+                    />
+                    <br />
                     <br />
                     Sexo:
-                    <select>
+                    <select v-model="user.sex">
                         <option>Hombre</option>
                         <option>Mujer</option>
                         <option>Otro</option></select
                     ><br />
                     Fec. Nacimiento <input type="date" id="date" /><br />
-                    <input
-                        v-onclick
-                        type="submit"
-                        class="fadeIn fourth"
-                        value="Sign Up"
-                        v-on:click="diagnostico"
-                    />
+                    <button
+                        class="btn btn-secondary fadeIn fourth"
+                        @click.prevent="register"
+                    >
+                        Register
+                    </button>
                 </form>
             </div>
         </div>
@@ -55,12 +58,58 @@
 
 <script>
 import Styles from "@/css/Register.css";
-export default {
-    name: "Register",
+import auth from "../services/auth.service";
+import User from "../models/user";
 
-    methods: {
-        diagnostico: function () {
+export default {
+    name: "register",
+    data() {
+        return {
+            user: new User("", "", ""),
+            submitted: false,
+            successful: false,
+            message: "",
+        };
+    },
+    computed: {
+        loggedIn() {
+            return this.$store.state.auth.status.loggedIn;
+        },
+    },
+    mounted: function () {
+        if (this.loggedIn) {
             this.$router.push("/diagnostico");
+        } /*
+        this.register({
+            email: "asdf@gmail.com",
+            name: "asdf",
+            password: "123456",
+        });*/
+    },
+    methods: {
+        register() {
+            this.message = "";
+            this.submitted = true;
+            //this.$validator.validate().then((isValid) => {
+            //if (isValid) {
+            this.$store.dispatch("auth/register", this.user).then(
+                (data) => {
+                    this.message = data.message;
+                    this.successful = true;
+                    console.log(this.message);
+                    this.$router.push("/login");
+                },
+                (error) => {
+                    this.message =
+                        (error.response && error.response.data) ||
+                        error.message ||
+                        error.toString();
+                    this.successful = false;
+                    console.log(this.message);
+                }
+            );
+            //}
+            //});
         },
     },
 };

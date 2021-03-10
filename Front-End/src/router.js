@@ -8,7 +8,9 @@ import About from '@/components/About'
 import Home from '@/components/Home'
 import Password from '@/components/Password'
 
-const router = new Router({
+Vue.use(Router);
+
+export const router = new Router({
   mode: 'history',
   routes: [
     {
@@ -16,6 +18,12 @@ const router = new Router({
       name: 'Login',
       component: Login
     },
+    /*{
+      path: '/profile',
+      name: 'Profile', 
+      // lazy-loaded
+      component: () => import('./components/Profile.vue')
+    },*/
     {
       path: '/register',
       name: 'Register',
@@ -46,7 +54,7 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
-  const publicPages = ['/login', '/register', '/home','/password'];
+  const publicPages = ['/login', '/register', '/home'];
   const authRequired = !publicPages.includes(to.path);
   const loggedIn = localStorage.getItem('user');
 
@@ -58,5 +66,3 @@ router.beforeEach((to, from, next) => {
     next();
   }
 });
-
-export default router

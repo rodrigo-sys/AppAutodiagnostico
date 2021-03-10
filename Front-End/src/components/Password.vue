@@ -15,7 +15,7 @@
             <input
                 type="submit"
                 class="fadeIn fourth"
-                v-on:click="recuperar"
+                @click.prevent="recuperar"
                 value="Aceptar"
             />
         </div>

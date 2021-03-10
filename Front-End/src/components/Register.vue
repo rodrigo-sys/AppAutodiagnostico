@@ -41,9 +41,11 @@
                     <select v-model="user.sex">
                         <option>Hombre</option>
                         <option>Mujer</option>
-                        <option>Otro</option></select
-                    ><br />
-                    Fec. Nacimiento <input type="date" id="date" /><br />
+                        <option>Otro</option>
+                    </select>
+                    <br />
+                    Fec. Nacimiento <input type="date" id="date" />
+                    <br />
                     <button
                         class="btn btn-secondary fadeIn fourth"
                         @click.prevent="register"
@@ -96,7 +98,6 @@ export default {
                 (data) => {
                     this.message = data.message;
                     this.successful = true;
-                    console.log(this.message);
                     this.$router.push("/login");
                 },
                 (error) => {
@@ -105,7 +106,6 @@ export default {
                         error.message ||
                         error.toString();
                     this.successful = false;
-                    console.log(this.message);
                 }
             );
             //}

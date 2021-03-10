@@ -50,9 +50,9 @@
                 </form>
                 <!-- Remind Passowrd -->
                 <div id="formFooter">
-                    <a class="underlineHover" href="#" v-on:click="password">
-                        Forgot Password?</a
-                    >
+                    <a class="underlineHover" href="#" @click.prevent="password">
+                        Forgot Password?
+                    </a>
                     <div id="components-demo">
                         <button-counter></button-counter>
                     </div>
@@ -103,7 +103,7 @@ export default {
             if (this.user.email && this.user.password) {
                 this.$store.dispatch("auth/login", this.user).then(
                     () => {
-                        this.$router.push("/diagnostico")
+                        this.$router.push("/diagnostico");
                     },
                     (error) => {
                         //this.loading = false;
@@ -111,7 +111,6 @@ export default {
                             (error.response && error.response.data) ||
                             error.message ||
                             error.toString();
-                        console.log(message);
                     }
                 );
             }

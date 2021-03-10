@@ -1,5 +1,6 @@
 <template>
     <div class="Home">
+        <navbar />
         <div class="wrapper fadeInDown">
             <div class="container-fluid">
                 <img src="../assets/ine.png" width="450" />
@@ -23,12 +24,6 @@
                         value="Diagnostico"
                         @click.prevent="diagnostico"
                     />
-                    <input
-                        type="submit"
-                        class="fadeIn fourth"
-                        value="LogOut"
-                        @click.prevent="LogOut"
-                    />
                 </form>
             </div>
         </div>
@@ -36,14 +31,16 @@
 </template>
 <script>
 import styles from "@/css/Sidenav.css";
+import navbar from "@/components/Nav";
 export default {
     name: "home",
-
+    components: {
+        navbar,
+    },
     methods: {
         diagnostico: function () {
             this.$router.push("/diagnostico");
         },
-        LogOut: function () {},
         toggleSidebar() {
             document.getElementById("sidebar").classList.toggle("active");
         },

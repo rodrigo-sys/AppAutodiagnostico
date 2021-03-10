@@ -1,5 +1,6 @@
 <template>
     <div class="Home">
+        <navbar />
         <div class="wrapper fadeInDown">
             <div id="formContent">
                 <br /><br /><br />
@@ -60,11 +61,13 @@
 
 <script>
 import Styles from "@/css/Register.css";
-import auth from "../services/auth.service";
-import User from "../models/user";
+import navbar from "@/components/Nav-no-login";
+import auth from "@/services/auth.service";
+import User from "@/models/user";
 
 export default {
     name: "register",
+    components: { navbar },
     data() {
         return {
             user: new User("", "", ""),

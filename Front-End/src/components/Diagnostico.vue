@@ -1,5 +1,6 @@
 <template>
     <div class="Home">
+        <navbar />
         <div class="wrapper fadeInDown">
             <div id="formContent">
                 <br /><br /><br />
@@ -85,9 +86,13 @@
 
 <script>
 import Styles from "@/css/Diagnostico.css";
+import navbar from "@/components/Nav";
+
 export default {
     name: "diagnostico",
-
+    components: {
+        navbar,
+    },
     computed: {
         currentUser() {
             return this.$store.state.auth.user;

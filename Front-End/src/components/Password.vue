@@ -1,5 +1,6 @@
 <template>
     <div class="Home">
+        <navbar />
         <div class="wrapper fadeInDown">
             <h2>Recupera tu cuenta</h2>
             <form>
@@ -24,8 +25,10 @@
 
 <script>
 import Styles from "@/css/Password.css";
+import navbar from "@/components/Nav-no-login";
 export default {
     name: "home",
+    components: { navbar },
 
     methods: {
         recuperar: function () {

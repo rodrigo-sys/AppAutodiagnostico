@@ -1,19 +1,12 @@
 <template>
     <div class="Home">
-        <header>
-            <nav>
-                <div class="menu-item">
-                    <router-link to="/"><a href="#">Login</a></router-link>
-                </div>
-            </nav>
-        </header>
-        <ventanaerror />
+        <navbar />
         <div class="wrapper fadeInDown">
             <div id="formContent">
                 <br /><br /><br />
                 <form>
                     <input
-                        type="email"
+                        type="text"
                         id="login"
                         class="fadeIn second"
                         name="login"
@@ -50,12 +43,13 @@
                 </form>
                 <!-- Remind Passowrd -->
                 <div id="formFooter">
-                    <a class="underlineHover" href="#" @click.prevent="password">
+                    <a
+                        class="underlineHover"
+                        href="#"
+                        @click.prevent="password"
+                    >
                         Forgot Password?
                     </a>
-                    <div id="components-demo">
-                        <button-counter></button-counter>
-                    </div>
                 </div>
             </div>
         </div>
@@ -63,15 +57,15 @@
 </template>
 
 <script>
+import navbar from "@/components/Nav-no-login";
 import Styles from "@/css/Login.css";
-import ventanaerror from "./VentanaError";
-import auth from "../services/auth.service";
-import User from "../models/user";
+import auth from "@/services/auth.service";
+import User from "@/models/user";
 
 export default {
     name: "login",
     components: {
-        ventanaerror,
+        navbar,
     },
     data() {
         return {

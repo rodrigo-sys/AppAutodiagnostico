@@ -11,7 +11,7 @@
                         type="checkbox"
                         id="olfato"
                         name="answer"
-                        value="Si" 
+                        value="Si"
                     /><br />
                     ¿Percibiste una marcada pérdida del gusto (sabor de los
                     alimentos) de manera repentina?
@@ -84,7 +84,7 @@
 </template>
 
 <script>
-import Styles from '@/css/Diagnostico.css'
+import Styles from "@/css/Diagnostico.css";
 export default {
     name: "login",
 

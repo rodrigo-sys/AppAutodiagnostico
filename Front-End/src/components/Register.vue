@@ -40,12 +40,13 @@
                         <option>Otro</option></select
                     ><br />
                     Fec. Nacimiento <input type="date" id="date" /><br />
-                        <input v-onclick
-                            type="submit"
-                            class="fadeIn fourth"
-                            value="Sign Up"
-                            v-on:click="diagnostico"
-                        />
+                    <input
+                        v-onclick
+                        type="submit"
+                        class="fadeIn fourth"
+                        value="Sign Up"
+                        v-on:click="diagnostico"
+                    />
                 </form>
             </div>
         </div>
@@ -53,13 +54,14 @@
 </template>
 
 <script>
-import Styles from '@/css/Register.css'
+import Styles from "@/css/Register.css";
 export default {
-  name: 'Register',
+    name: "Register",
 
-  methods:{   diagnostico: function () {
+    methods: {
+        diagnostico: function () {
             this.$router.push("/diagnostico");
-  }
-}
+        },
+    },
 };
 </script>

@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import Styles from '@/css/Password.css'
+import Styles from "@/css/Password.css";
 export default {
     name: "home",
 

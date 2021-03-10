@@ -7,11 +7,11 @@
                 </div>
             </nav>
         </header>
-     <ventanaerror />
-        <div class="wrapper fadeInDown"> 
+        <ventanaerror />
+        <div class="wrapper fadeInDown">
             <div id="formContent">
                 <br /><br /><br />
-                <form> 
+                <form>
                     <input
                         type="email"
                         id="login"
@@ -29,12 +29,15 @@
                         required
                         minlength="8"
                     />
-                <abbr title="Este campo es obligatorio" aria-label="required"></abbr>
-                    <input 
+                    <abbr
+                        title="Este campo es obligatorio"
+                        aria-label="required"
+                    ></abbr>
+                    <input
                         type="submit"
                         class="fadeIn fourth"
                         value="Log In"
-                       v-on:click="signIn" 
+                        v-on:click="signIn"
                     />
                     <input
                         type="submit"
@@ -46,8 +49,9 @@
 
                 <!-- Remind Passowrd -->
                 <div id="formFooter">
-                        <a class="underlineHover" href="#" v-on:click="password">
-                            Forgot Password?</a>
+                    <a class="underlineHover" href="#" v-on:click="password">
+                        Forgot Password?</a
+                    >
                     <div id="components-demo">
                         <button-counter></button-counter>
                     </div>
@@ -58,8 +62,8 @@
 </template>
 
 <script>
-import Styles from '@/css/Login.css'
-import ventanaerror from './VentanaError';
+import Styles from "@/css/Login.css";
+import ventanaerror from "./VentanaError";
 export default {
     name: "login",
     components: {
@@ -67,21 +71,20 @@ export default {
     },
     methods: {
         signIn: function () {
-            <button></button>
+            <button></button>;
             this.$router.push("/home");
 
-    
-            // Codigo para logearse 
+            // Codigo para logearse
         },
         signUp: function () {
             this.$router.push("/register");
-        // Codigo para registrarse
+            // Codigo para registrarse
         },
 
-        password: function (){
+        password: function () {
             this.$router.push("/password");
             // Forgot Password
-        }
         },
-    };
+    },
+};
 </script>

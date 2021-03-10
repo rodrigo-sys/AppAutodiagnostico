@@ -87,7 +87,7 @@ export default {
     },
     created() {
         if (this.loggedIn) {
-            this.$router.push("/diagnostico");
+            this.$router.push("/about");
         }
     },
     //mounted: function () {},

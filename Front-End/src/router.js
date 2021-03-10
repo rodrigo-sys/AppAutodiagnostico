@@ -18,12 +18,6 @@ export const router = new Router({
       name: 'Login',
       component: Login
     },
-    /*{
-      path: '/profile',
-      name: 'Profile', 
-      // lazy-loaded
-      component: () => import('./components/Profile.vue')
-    },*/
     {
       path: '/register',
       name: 'Register',
@@ -45,10 +39,14 @@ export const router = new Router({
       component: Password
     },
     {
-
       path: '/about',
       name: 'about',
       component: About
+    },
+    {
+      path: '*',
+      name: 'Anything',
+      component: Login
     }
   ]
 })

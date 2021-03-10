@@ -14,23 +14,23 @@ class UpdateUsuarios extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->date('Fecha_Nacimiento');
-            $table->string('Sexo');
-            $table->boolean('Tos_Seca');
-            $table->boolean('Fiebre');
-            $table->boolean('cansancio');
-            $table->boolean('Molestias_Cansancio');
-            $table->boolean('Dolor_De_Garganta');
-            $table->boolean('Diarrea');
-            $table->boolean('Conjuntivitis');
-            $table->boolean('Dolor_De_Cabeza');
-            $table->boolean('Pérdida_De_Olfato');
-            $table->boolean('Pérdida_De_Gusto');
-            $table->boolean('Erupciones_Cutáneas');
-            $table->boolean('Pérdida_Del_Control_En_Los_Dedos_De_Las_Manos');
-            $table->boolean('Dificultad_Para_Respirar');
-            $table->boolean('Incapacidad_Para_Moverse');
-            $table->boolean('Dolor/Presión_En_El_Pecho');
+            $table->date('Fecha_Nacimiento')->nullable();
+            $table->string('Sexo')->nullable();
+            $table->boolean('Tos_Seca')->nullable();
+            $table->boolean('Fiebre')->nullable();
+            $table->boolean('cansancio')->nullable();
+            $table->boolean('Molestias_Cansancio')->nullable();
+            $table->boolean('Dolor_De_Garganta')->nullable();
+            $table->boolean('Diarrea')->nullable();
+            $table->boolean('Conjuntivitis')->nullable();
+            $table->boolean('Dolor_De_Cabeza')->nullable();
+            $table->boolean('Pérdida_De_Olfato')->nullable();
+            $table->boolean('Pérdida_De_Gusto')->nullable();
+            $table->boolean('Erupciones_Cutáneas')->nullable();
+            $table->boolean('Pérdida_Del_Control_En_Los_Dedos')->nullable();
+            $table->boolean('Dificultad_Para_Respirar')->nullable();
+            $table->boolean('Incapacidad_Para_Moverse')->nullable();
+            $table->boolean('Dolor/Presión_En_El_Pecho')->nullable();
         });
     }
 
@@ -50,7 +50,7 @@ class UpdateUsuarios extends Migration
             $table->dropColumn('Molestias_Cansancio');
             $table->dropColumn('Dolor_De_Garganta');
             $table->dropColumn('Diarrea');
-            $table->dropColumn('Conjuntuvitis');
+            $table->dropColumn('Conjuntivitis');
             $table->dropColumn('Dolor_De_Cabeza');
             $table->dropColumn('Pérdida_De_Olfato');
             $table->dropColumn('Pérdida_De_Gusto');
